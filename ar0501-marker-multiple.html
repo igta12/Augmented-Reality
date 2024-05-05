@@ -19,6 +19,8 @@
 
         <!-- create assets -->
         <a-assets timeout="900000">
+            <a-asset-item id="drone" src="./assets/busterDrone/busterDrone.gltf"></a-asset-item>
+            <a-asset-item id="cookie" src="./assets/cookie5/cookie5.gltf"></a-asset-item>
             <a-asset-item id="apple" src="./assets/buah/apple/scene.gltf"></a-asset-item>
             <a-asset-item id="avocado" src="./assets/buah/avocado/scene.glb"></a-asset-item>
             <a-asset-item id="banana" src="./assets/buah/banana/scene.gltf"></a-asset-item>
@@ -29,6 +31,8 @@
             <a-asset-item id="semangka" src="./assets/buah/semangka/scene.glb"></a-asset-item>
             <a-asset-item id="tomato" src="./assets/buah/tomato/scene.glb"></a-asset-item>
             <a-asset-item id="fruits" src="./assets/buah/fruits/scene.glb"></a-asset-item>
+            <img id="logo" src="./images/photo/Logo Unila.png">
+            <img id="berry" src="./images/photo/berry.jpg">
 
         </a-assets>
         <!-- handle unknown marker -->
@@ -118,12 +122,12 @@
 
         <!-- handle custom marker -->
         <a-marker preset="custom" type="pattern" url="./marker/datamatrix-1234567890/marker-datamatrix-1234567890.patt">
-            <a-image src="#kio" rotation="-90 0 0" width="1" height="1" position="-1 0 -1"></a-image>
+            <a-image src="#logo" rotation="-90 0 0" width="1" height="1" position="-1 0 -1"></a-image>
         </a-marker>
 
         <!-- handle custom marker -->
         <a-marker preset="custom" type="pattern" url="./marker/unila/pattern-Unila-warna.patt">
-            <a-image src="#airterjun" rotation="-90 0 0" width="1" height="1" position="-1 0 -1"></a-image>
+            <a-image src="#berry" rotation="-90 0 0" width="1" height="1" position="-1 0 -1"></a-image>
         </a-marker>
 
         <!-- add a simple camera -->
