@@ -19,16 +19,17 @@
 
         <!-- create assets -->
         <a-assets timeout="900000">
-            <a-asset-item id="drone" src="./assets/busterDrone/busterDrone.gltf"></a-asset-item>
-            <a-asset-item id="cookie" src="./assets/cookie5/cookie5.gltf"></a-asset-item>
-            <a-asset-item id="roti" src="./assets/roti/roti.gltf"></a-asset-item>
-            <a-asset-item id="motorbike" src="./assets/motorbike/scene.gltf"></a-asset-item>
-            <a-asset-item id="helmet" src="./assets/damagedHelmet/damagedHelmet.gltf"></a-asset-item>
-            <a-asset-item id="skull" src="./assets/skull_downloadable/scene.gltf"></a-asset-item>
-            <img id="bougenville" src="./images/photo/bougenville.jpg">
-            <img id="kio" src="./images/photo/kio.jpg">
-            <img id="mahasiswa" src="./images/photo/mahasiswa.jpg">
-            <img id="airterjun" src="./images/photo/wisata-air-terjun.jpg">
+            <a-asset-item id="apple" src="./assets/buah/apple/scene.gltf"></a-asset-item>
+            <a-asset-item id="avocado" src="./assets/buah/avocado/scene.glb"></a-asset-item>
+            <a-asset-item id="banana" src="./assets/buah/banana/scene.gltf"></a-asset-item>
+            <a-asset-item id="cherry" src="./assets/buah/cherry/scene.glb"></a-asset-item>
+            <a-asset-item id="lemon" src="./assets/buah/lemon/scene.gltf"></a-asset-item>
+            <a-asset-item id="orange" src="./assets/buah/orange/scene.gltf"></a-asset-item>
+            <a-asset-item id="pineapple" src="./assets/buah/pineapple/scene.gltf"></a-asset-item>
+            <a-asset-item id="semangka" src="./assets/buah/semangka/scene.glb"></a-asset-item>
+            <a-asset-item id="tomato" src="./assets/buah/tomato/scene.glb"></a-asset-item>
+            <a-asset-item id="fruits" src="./assets/buah/fruits/scene.glb"></a-asset-item>
+
         </a-assets>
         <!-- handle unknown marker -->
         <a-marker type="unknown">
@@ -47,66 +48,72 @@
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="0">
-            <a-box position="0 0.5 0" material="opacity: 0.5; side: double;color:red;">
-                <a-torus-knot radius="0.26" radius-tubular="0.05"></a-torus-knot>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#apple" rotation="0 0 0" position="0 0 0" scale="0.5 0.5 0.5"></a-gltf-model>
             </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="1">
-            <a-entity gltf-model="#roti"></a-entity>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#avocado" rotation="-90 0 0" position="0 0 0.2" scale="4.5 4.5 4.5"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="2">
-            <a-plane width="1" height="1" position="0 0 0" rotation="-90 0 0" color="green">
-                <a-gltf-model src="#motorbike" rotation="90 0 0" position="0 -0.2 0.2" scale="0.5 0.5 0.5"></a-gltf-model>
-            </a-plane>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#banana" rotation="0 90 0" position="0 0 0" scale="0.8 0.8 0.8"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="3">
-            <a-plane width="1" height="1" position="0 0 0" rotation="-90 0 0" color="white">
-                <a-gltf-model src="#helmet" rotation="0 0 0" position="0 0 0" scale="0 0 0.5"></a-gltf-model>
-            </a-plane>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#cherry" rotation="0 0 00" position="0 -0.2 0.3" scale="0.3 0.3 0.3"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="4">
-            <a-plane width="1" height="1" position="0 0 0" rotation="-90 0 0" color="cyan">
-                <a-gltf-model src="#skull" rotation="90 0 0" position="0 -0.2 1" scale="0.5 0.5 0.5"></a-gltf-model>
-            </a-plane>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#lemon" rotation="0 0 0" position="0 -0.2 0" scale="0.09 0.09 0.09"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="5">
-            <a-image src="#bougenville" rotation="-90 0 0" width="2" height="1">
-                <a-entity position="0 -2.5 0" text-geometry="value: Perpustakaan Sekolah Alam;  style: italic; size: 0.4; weight: bold; height: 0;" material="shader: flat; color: blue" align="center"></a-entity>
-            </a-image>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#orange" rotation="0 0 0" position="0 0 0" scale="0.4 0.4 0.4"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="6">
-            <a-image src="#kio" rotation="-90 0 0" width="2" height="1"></a-image>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#pineapple" rotation="0 0 0" position="0 0 0" scale="0.4 0.4 0.4"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="7">
-            <a-plane width="1" height="1" position="0 0 0" rotation="-90 0 0" color="white" src="#mahasiswa">
-                <a-text value="Bunga" color="#111" position="0 -0.7 0" align="center"></a-text>
-                <a-sphere color="blue" position="-0.7 -0.7 0" radius="0.2"></a-sphere>
-                <a-sphere color="red" position="0.7 -0.7 0" radius="0.2"></a-sphere>
-            </a-plane>
+            <a-box position="0 0.5 0" material="opacity: 0.3;"></a-box>
+            <a-gltf-model src="#tomato" rotation="0 0 0" position="0 0 0" scale="7.5 7.5 7.5"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle matrix marker -->
         <a-marker type="barcode" value="8">
-            <a-plane width="1" height="1" position="0 0 0" rotation="-90 0 0" color="white" src="#airterjun">
-                <a-torus-knot radius="0.06" radius-tubular="0.05" position="0.7 -0.7 0">
-                </a-torus-knot>
-                <a-torus-knot radius="0.06" radius-tubular="0.05" position="-0.7 -0.7 0">
-                </a-torus-knot>
-            </a-plane>
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#semangka" rotation="0 0 0" position="-0.1 0 0" scale="2 2 2"></a-gltf-model>
+            </a-box>
+        </a-marker>
+
+        <!-- handle matrix marker -->
+        <a-marker type="barcode" value="9">
+            <a-box position="0 0.5 0" material="opacity: 0.3;">
+                <a-gltf-model src="#fruits" rotation="0 0 0" position="0 0 0" scale="2 2 2"></a-gltf-model>
+            </a-box>
         </a-marker>
 
         <!-- handle custom marker -->
