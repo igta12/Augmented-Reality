@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+      const list = ["apel", "stroberi", "emon", "buahan", "jeruk", "nanas", "pisang", "tomat", "semangka", "ceri"];
+	    const visibles = [false, false, false, false, false, false, false, false, false, false];
+	    const setVisible = (button, entities, visible) => {
+	  if (visible) {
+	    button.classList.add("selected");
+	  } else {
+	    button.classList.remove("selected");
+	  }
+	  entities.forEach((entity) => {
+	    entity.setAttribute("visible", visible);
+	  });
+	}
+	list.forEach((item, index) => {
+	  const button = document.querySelector("#" + item);
+	  const entities = document.querySelectorAll("." + item + "-entity");
+	  setVisible(button, entities, visibles[index]);
+	  button.addEventListener('click', () => {
+	    visibles[index] = !visibles[index];
+	    setVisible(button, entities, visibles[index]);
+	  });
+	});
+      })
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      .example-container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .options-panel {
+	      position: fixed;
+	      left: 0;
+	      top: 0;
+	      z-index: 2;
+      }
+      .options-panel img {
+	      border: solid 2px;
+	      width: 50px;
+	      height: 50px;
+	      object-fit: cover;
+	      cursor: pointer;
+        background-color: white;
+      }
+      .options-panel img.selected {
+	      background-color: green;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="example-container">
+      <div class="options-panel">
+	      <img id="emon" src="/assets/buah/lemon/lemon.png" title="Lemon"/>
+        <img id="pisang" src="/assets/buah/banana/banana.png" title="Banana"/>
+        <img id="buahan" src="./assets/buah/fruits/fruits.png" title="Fruits"/>
+        <img id="apel" src="./assets/buah/apple/apple.png" title="Apple"/>
+        <img id="stroberi" src="/assets/buah/stroberi/strawberry.png" title="Strawberry"/>
+	      <img id="nanas" src="/assets/buah/pineapple/pineapple.png" title="Pineapple"/>
+        <img id="jeruk" src="/assets/buah/orange/orange.png" title="Jeruk"/>
+	      <img id="tomat" src="/assets/buah/tomato/tomato.png" title="Tomato"/>
+        <img id="semangka" src="/assets/buah/semangka/watermelon.png" title="Watermelon"/>
+        <img id="ceri" src="/assets/buah/cherry/cherry.png" title="Cherry"/>
+      </div>
+
+      <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-assets>
+          <a-asset-item id="headModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
+          <a-asset-item id="apple" src="./assets/buah/apple/scene.gltf"></a-asset-item>
+          <a-asset-item id="strawberry" src="./assets/buah/stroberi/scene.gltf"></a-asset-item>
+          <a-asset-item id="lemon" src="./assets/buah/lemon/scene.gltf"></a-asset-item>
+          <a-asset-item id="fruits" src="./assets/buah/fruits/scene.glb"></a-asset-item>
+          <a-asset-item id="orange" src="./assets/buah/orange/scene.gltf"></a-asset-item>
+          <a-asset-item id="pineapple" src="./assets/buah/pineapple/scene.gltf"></a-asset-item>
+          <a-asset-item id="banana" src="./assets/buah/banana/scene.gltf"></a-asset-item>
+          <a-asset-item id="tomato" src="./assets/buah/tomato/scene.glb"></a-asset-item>
+          <a-asset-item id="watermelon" src="./assets/buah/semangka/scene.glb"></a-asset-item>
+          <a-asset-item id="cherry" src="./assets/buah/cherry/scene.glb"></a-asset-item>
+        </a-assets>
+
+        <a-camera active="false" position="0 0 0"></a-camera>
+
+	<!-- head occluder -->
+        <a-entity mindar-face-target="anchorIndex: 168">
+	        <a-gltf-model mindar-face-occluder position="0 -0.3 0.15"rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 159">
+	        <a-gltf-model rotation="0 -0 0" position="0 -0.04 0" scale="0.1 0.1 0.1" src="#apple" class="apel-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 386">
+	        <a-gltf-model rotation="0 -0 0" position="0 -0.04 0" scale="0.1 0.1 0.1" src="#apple" class="apel-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 119">
+	        <a-gltf-model rotation="0 -0 0" position="0 -0.04 0" scale="0.01 0.01 0.01" src="#strawberry" class="stroberi-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 348">
+	        <a-gltf-model rotation="0 -0 0" position="0 -0.04 0" scale="0.01 0.01 0.01" src="#strawberry" class="stroberi-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 168">
+	        <a-gltf-model rotation="-90 90 87" position="-0.001 -0.05 -1.37" scale="0.2 0.2 0.21" src="#lemon" class="emon-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 10">
+	        <a-gltf-model rotation="0 -90 -12" position="0.25 0.42 -0.35" scale="4.6 4.3 3.8" src="#fruits" class="buahan-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 1">
+	        <a-gltf-model rotation="0 -0 0" position="-0 0.02 -0.03" scale="0.12 0.1 0.12" src="#orange" class="jeruk-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 61">
+	        <a-gltf-model rotation="0 -0 0" position="-0.02 0 0" scale="0.06 0.06 0.06" src="#pineapple" class="nanas-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 291">
+	        <a-gltf-model rotation="0 -0 0" position="0.02 0 0" scale="0.06 0.06 0.06" src="#pineapple" class="nanas-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 67">
+	        <a-gltf-model rotation="-25 -90 0" position="-0.1 0.05 0" scale="0.5 0.5 0.5" src="#banana" class="pisang-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 338">
+	        <a-gltf-model rotation="-25 90 0" position="0.1 0.05 0" scale="0.5 0.5 0.5" src="#banana" class="pisang-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 127">
+	        <a-gltf-model rotation="0 180 -90" position="0.05 -0.3 -0.2" scale="0.5 0.5 0.5" src="#watermelon" class="semangka-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 356">
+	        <a-gltf-model rotation="0 0 -90" position="0 -0.3 -0.17" scale="0.5 0.5 0.5" src="#watermelon" class="semangka-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 1">
+	        <a-gltf-model rotation="0 -90 -90" position="0 0.02 -0.06" scale="2.7 2.7 2.7" src="#tomato" class="tomat-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 127">
+	        <a-gltf-model rotation="0.1 90 0" position="0.07 -0.52 -0.3" scale="0.09 0.09 0.09" src="#cherry" class="ceri-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 356">
+	        <a-gltf-model rotation="0.1 -90 0" position="-0.07 -0.52 -0.3" scale="0.09 0.09 0.09" src="#cherry" class="ceri-entity" visible="false"></a-gltf-model>
+        </a-entity>
+      </a-scene>
+    </div>
+  </body>
+</html>
