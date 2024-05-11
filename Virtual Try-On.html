@@ -6,8 +6,8 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
       const list = ["apel", "stroberi", "emon", "buahan", "jeruk", "nanas", "pisang", "tomat", "semangka", "ceri"];
-	    const visibles = [false, false, false, false, false, false, false, false, false, false];
-	    const setVisible = (button, entities, visible) => {
+	  const visibles = [false, false, false, false, false, false, false, false, false, false];
+	  const setVisible = (button, entities, visible) => {
 	  if (visible) {
 	    button.classList.add("selected");
 	  } else {
@@ -51,7 +51,7 @@
 	      height: 50px;
 	      object-fit: cover;
 	      cursor: pointer;
-        background-color: white;
+          background-color: white;
       }
       .options-panel img.selected {
 	      background-color: green;
@@ -62,14 +62,14 @@
   <body>
     <div class="example-container">
       <div class="options-panel">
-	      <img id="emon" src="/assets/buah/lemon/lemon.png" title="Lemon"/>
+	    <img id="emon" src="/assets/buah/lemon/lemon.png" title="Lemon"/>
         <img id="pisang" src="/assets/buah/banana/banana.png" title="Banana"/>
         <img id="buahan" src="./assets/buah/fruits/fruits.png" title="Fruits"/>
         <img id="apel" src="./assets/buah/apple/apple.png" title="Apple"/>
         <img id="stroberi" src="/assets/buah/stroberi/strawberry.png" title="Strawberry"/>
-	      <img id="nanas" src="/assets/buah/pineapple/pineapple.png" title="Pineapple"/>
+	    <img id="nanas" src="/assets/buah/pineapple/pineapple.png" title="Pineapple"/>
         <img id="jeruk" src="/assets/buah/orange/orange.png" title="Jeruk"/>
-	      <img id="tomat" src="/assets/buah/tomato/tomato.png" title="Tomato"/>
+	    <img id="tomat" src="/assets/buah/tomato/tomato.png" title="Tomato"/>
         <img id="semangka" src="/assets/buah/semangka/watermelon.png" title="Watermelon"/>
         <img id="ceri" src="/assets/buah/cherry/cherry.png" title="Cherry"/>
       </div>
