@@ -1,0 +1,58 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: ./card/buah(3).mind; maxTrack: 10" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <a-asset-item id="apple" src="./assets/buah/apple/scene.gltf"></a-asset-item>
+        <a-asset-item id="banana" src="./assets/buah/banana/scene.gltf"></a-asset-item>
+        <a-asset-item id="fruits_mix" src="./assets/buah/fruits_mix/scene.gltf"></a-asset-item>
+        <a-asset-item id="fruits" src="./assets/buah/fruits/scene.glb"></a-asset-item>
+        <a-asset-item id="lemon" src="./assets/buah/lemon/scene.gltf"></a-asset-item>        
+        <a-asset-item id="orange" src="./assets/buah/orange/scene.gltf"></a-asset-item>
+        <a-asset-item id="pineapple" src="./assets/buah/pineapple/scene.gltf"></a-asset-item>        
+        <a-asset-item id="strawberry" src="./assets/buah/stroberi/scene.gltf"></a-asset-item>
+        <a-asset-item id="tomato" src="./assets/buah/tomato/scene.glb"></a-asset-item>
+        <a-asset-item id="watermelon" src="./assets/buah/semangka/scene.glb"></a-asset-item>
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model src="#apple" rotation="0 0 3" position="0 0.01 0" scale="0.36 0.36 0.36"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model src="#banana" rotation="11 90 0" position="0 0 0" scale="0.8 0.8 0.8"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-gltf-model src="#fruits_mix" rotation="0 -90 0" position="0 -0.27 0" scale="0.08 0.08 0.08"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model src="#fruits" rotation="0 0 0" position="0 0 0" scale="2 2 2"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 4">
+        <a-gltf-model src="#lemon" rotation="-5 90 0" position="0 -0.2 0" scale="0.08 0.08 0.08"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 5">
+        <a-gltf-model src="#orange" rotation="0 0 0" position="0 0 0" scale="0.28 0.28 0.28"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 6">
+        <a-gltf-model src="#pineapple" rotation="0 0 0" position="0 0 0" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 7">
+        <a-gltf-model src="#strawberry" rotation="0 90 0" position="0 -0.3 0" scale="0.1 0.1 0.1"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 8">
+        <a-gltf-model src="#tomato" rotation="0 0 0" position="0 -0.2 0" scale="7.5 7.5 7.5"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 9">
+        <a-gltf-model src="#watermelon" rotation="0 0 0" position="-0.1 0 0" scale="2 2 2"></a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
